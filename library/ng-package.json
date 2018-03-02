@@ -1,0 +1,12 @@
+{
+    "$schema": "../node_modules/ng-packagr/package.schema.json",
+    "lib": {
+        "entryFile": "public_api.ts",
+        "languageLevel": [
+            "es2017",
+            "dom"
+        ],
+        "comments": "none"
+    },
+    "dest": "../dist"
+}

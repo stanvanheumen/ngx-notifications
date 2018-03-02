@@ -1,0 +1,12 @@
+<ngx-notifications-list></ngx-notifications-list>
+
+<select [(ngModel)]="currentLanguage" (ngModelChange)="onLanguageChange($event)" title="Current language">
+    <option *ngFor="let language of languages" [value]="language.languages[0]">
+        {{ language.name | translate }}
+    </option>
+</select>
+
+<button (click)="createSuccess()" type="button">Create <strong>success</strong> notification</button>
+<button (click)="createError()" type="button">Create <strong>error</strong> notification</button>
+<button (click)="createWarning()" type="button">Create <strong>warning</strong> notification</button>
+<button (click)="createInfo()" type="button">Create <strong>info</strong> notification</button>

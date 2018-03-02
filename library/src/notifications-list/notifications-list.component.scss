@@ -1,0 +1,24 @@
+.ngx-notifications-wrapper {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 400;
+    position: fixed;
+    pointer-events: none;
+}
+
+.ngx-notifications-list {
+    padding: 0;
+    width: 100%;
+    display: block;
+    max-width: 420px;
+    margin-left: auto;
+    position: relative;
+}
+
+.ngx-notifications-item {
+    margin: 0;
+    padding: 0;
+    pointer-events: all;
+}

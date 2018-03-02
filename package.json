@@ -1,0 +1,52 @@
+{
+    "name": "@stanvanheumen/ngx-notifications",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "A simple library that allows you to notify your users in your Angular 5+ app.",
+    "author": {
+        "name": "Stan van Heumen",
+        "email": "stanvanheumen@gmail.com",
+        "url": "https://www.linkedin.com/in/stan-van-heumen"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/stanvanheumen/ngx-notifications.git"
+    },
+    "bugs": {
+        "email": "stanvanheumen@gmail.com",
+        "url": "https://github.com/stanvanheumen/ngx-notifications.git/issues"
+    },
+    "homepage": "https://github.com/stanvanheumen/ngx-notifications#readme",
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve",
+        "package": "ng-packagr -p ./library/ng-package.json && copyfiles README.md dist",
+        "build:development": "ng build",
+        "build:production": "ng build --target production --build-optimizer --vendor-chunk"
+    },
+    "dependencies": {
+        "@angular/animations": "^5.2.6",
+        "@angular/common": "^5.2.6",
+        "@angular/compiler": "^5.2.6",
+        "@angular/core": "^5.2.6",
+        "@angular/forms": "^5.2.6",
+        "@angular/http": "^5.2.6",
+        "@angular/platform-browser": "^5.2.6",
+        "@angular/platform-browser-dynamic": "^5.2.6",
+        "@angular/router": "^5.2.6",
+        "@stanvanheumen/ngx-translations": "^1.0.5",
+        "core-js": "^2.4.1",
+        "rxjs": "^5.5.6",
+        "zone.js": "^0.8.19"
+    },
+    "devDependencies": {
+        "@angular/cli": "^1.7.1",
+        "@angular/compiler-cli": "^5.2.6",
+        "@angular/language-service": "^5.2.6",
+        "copyfiles": "^1.2.0",
+        "ng-packagr": "^2.1.0",
+        "tsickle": "~0.25.6",
+        "tslib": "^1.9.0",
+        "typescript": "~2.5.3"
+    }
+}

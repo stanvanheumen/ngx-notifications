@@ -1,0 +1,8 @@
+<div *ngIf="notifications$ | async as notifications" class="ngx-notifications-wrapper">
+    <div [@listAnimation]="notifications.length" class="ngx-notifications-list">
+        <div *ngFor="let notification of notifications; trackBy: trackById" class="ngx-notifications-item">
+            <ngx-notifications-item [notification]="notification"
+                                    (onDestroy)="onNotificationDestroy($event)"></ngx-notifications-item>
+        </div>
+    </div>
+</div>

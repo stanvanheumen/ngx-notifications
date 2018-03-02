@@ -1,0 +1,26 @@
+{
+    "name": "@stanvanheumen/ngx-notifications",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "A simple library that allows you to notify your users in your Angular 5+ app.",
+    "author": {
+        "name": "Stan van Heumen",
+        "email": "stanvanheumen@gmail.com",
+        "url": "https://www.linkedin.com/in/stan-van-heumen"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/stanvanheumen/ngx-notifications.git"
+    },
+    "bugs": {
+        "email": "stanvanheumen@gmail.com",
+        "url": "https://github.com/stanvanheumen/ngx-notifications.git/issues"
+    },
+    "homepage": "https://github.com/stanvanheumen/ngx-notifications#readme",
+    "peerDependencies": {
+        "@angular/animations": "^5.2.0",
+        "@angular/common": "^5.2.0",
+        "@angular/core": "^5.2.0",
+        "@stanvanheumen/ngx-translations": ">=1.0.5"
+    }
+}

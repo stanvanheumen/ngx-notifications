@@ -1,0 +1,96 @@
+.ngx-notification-icon {
+    margin-right: 10px;
+}
+
+.ngx-notification-data {
+    width: 100%;
+}
+
+.ngx-notification-title {
+    display: block;
+    font-size: 16px;
+    max-width: 100%;
+    overflow: hidden;
+    line-height: 1.5;
+    white-space: nowrap;
+    margin: 0 30px 4px 0;
+    text-overflow: ellipsis;
+}
+
+.ngx-notification-text {
+    margin: 0;
+    line-height: 1.3;
+    color: rgba(white, 0.6);
+}
+
+.ngx-notification {
+    color: white;
+    display: flex;
+    font-weight: 500;
+    user-select: none;
+    position: relative;
+    border-radius: 4px;
+    margin: 10px 10px 0;
+    padding: 10px 10px 14px;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 1px 2px rgba(black, 0.2);
+
+    &--success {
+        background-color: #43a047;
+        border-left: 4px solid #295f2d;
+    }
+
+    &--error {
+        background-color: #be2c2c;
+        border-left: 4px solid #7e2020;
+    }
+
+    &--warning {
+        background-color: #f57f17;
+        border-left: 4px solid #ac7a26;
+
+        & .ngx-notification-text { color: rgba(black, 0.6); }
+    }
+
+    &--info {
+        background-color: #5e35b1;
+        border-left: 4px solid #191b1f;
+    }
+}
+
+.ngx-notification-clear {
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 200ms cubic-bezier(0, 0, .2, 1);
+
+    &:hover {
+        background-color: rgba(black, 0.15);
+    }
+
+    &:active {
+        background-color: rgba(black, 0.25);
+    }
+}
+
+.ngx-notification-progress {
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    position: absolute;
+    background-color: rgba(black, 0.2);
+
+    &--success { background-color: #295f2d; }
+    &--error { background-color: #7e2020; }
+    &--warning { background-color: #ac7a26; }
+    &--info { background-color: #191b1f; }
+}
