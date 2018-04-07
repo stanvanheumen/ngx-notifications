@@ -63,12 +63,6 @@ export class NotificationsService {
         this.push(item);
     }
 
-    transform(callback: (notifications: Notification[]) => Notification[]) {
-        const oldNotifications = this.list$.getValue();
-        const newNotifications = callback(oldNotifications);
-        this.list$.next(newNotifications);
-    }
-
     delete(notification: Notification) {
         return this.pull(notification);
     }

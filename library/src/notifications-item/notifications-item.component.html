@@ -1,20 +1,23 @@
-<div [ngClass]="notificationClasses"
-     class="ngx-notification">
-    <i class="material-icons ngx-notification-icon">{{ notification.icon }}</i>
+<i class="{{ iconClass }} ngx-notification-icon">
+    {{ notification.icon }}
+</i>
 
-    <div class="ngx-notification-data">
-        <h1 class="ngx-notification-title">{{ notification.title | translate }}</h1>
-        <p class="ngx-notification-text">{{ notification.text | translate }}</p>
-    </div>
+<div class="ngx-notification-data">
+    <h1 class="ngx-notification-title">
+        {{ notification.title | translate }}
+    </h1>
+    <p class="ngx-notification-text">
+        {{ notification.text | translate }}
+    </p>
+</div>
 
-    <div *ngIf="notification.closable"
-         (click)="onDestroy.emit(notification)"
-         class="ngx-notification-clear">
-        <i class="material-icons">clear</i>
-    </div>
+<div *ngIf="notification.closable"
+     (click)="onDestroy.emit(notification)"
+     class="ngx-notification-clear">
+    <i class="material-icons">clear</i>
+</div>
 
-    <div *ngIf="notification.timeout > 0"
-         [ngClass]="progressBarClasses"
-         [style.width]="progressWidth"
-         class="ngx-notification-progress"></div>
+<div *ngIf="notification.timeout > 0"
+     [style.width]="progressWidth"
+     class="ngx-notification-progress">
 </div>

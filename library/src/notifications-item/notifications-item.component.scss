@@ -1,10 +1,26 @@
-.ngx-notification-icon {
-    margin-right: 10px;
+:host {
+    color: white;
+    display: flex;
+    font-weight: 500;
+    margin: 10px 0 0;
+    user-select: none;
+    position: relative;
+    border-radius: 4px;
+    border-left: 4px solid;
+    padding: 10px 10px 14px;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 1px 2px rgba(black, 0.2);
+
+    &.success { border-color: #295f2d; background-color: #43a047; }
+    &.error { border-color: #7e2020; background-color: #be2c2c; }
+    &.warning { border-color: #ac7a26; background-color: #f57f17; }
+    &.info { border-color: #191b1f; background-color: #5e35b1; }
 }
 
-.ngx-notification-data {
-    width: 100%;
-}
+.ngx-notification-icon { margin-right: 10px; }
+
+.ngx-notification-data { width: 100%; }
 
 .ngx-notification-title {
     display: block;
@@ -23,48 +39,12 @@
     color: rgba(white, 0.6);
 }
 
-.ngx-notification {
-    color: white;
-    display: flex;
-    font-weight: 500;
-    user-select: none;
-    position: relative;
-    border-radius: 4px;
-    margin: 10px 10px 0;
-    padding: 10px 10px 14px;
-    justify-content: center;
-    font-family: 'Roboto', sans-serif;
-    box-shadow: 0 1px 2px rgba(black, 0.2);
-
-    &--success {
-        background-color: #43a047;
-        border-left: 4px solid #295f2d;
-    }
-
-    &--error {
-        background-color: #be2c2c;
-        border-left: 4px solid #7e2020;
-    }
-
-    &--warning {
-        background-color: #f57f17;
-        border-left: 4px solid #ac7a26;
-
-        & .ngx-notification-text { color: rgba(black, 0.6); }
-    }
-
-    &--info {
-        background-color: #5e35b1;
-        border-left: 4px solid #191b1f;
-    }
-}
-
 .ngx-notification-clear {
     top: 0;
     right: 0;
     width: 30px;
-    height: 30px;
     margin: 5px;
+    height: 30px;
     display: flex;
     cursor: pointer;
     position: absolute;
@@ -73,13 +53,8 @@
     justify-content: center;
     transition: background-color 200ms cubic-bezier(0, 0, .2, 1);
 
-    &:hover {
-        background-color: rgba(black, 0.15);
-    }
-
-    &:active {
-        background-color: rgba(black, 0.25);
-    }
+    &:hover { background-color: rgba(black, 0.15); }
+    &:active { background-color: rgba(black, 0.25); }
 }
 
 .ngx-notification-progress {
@@ -87,10 +62,12 @@
     bottom: 0;
     height: 4px;
     position: absolute;
-    background-color: rgba(black, 0.2);
-
-    &--success { background-color: #295f2d; }
-    &--error { background-color: #7e2020; }
-    &--warning { background-color: #ac7a26; }
-    &--info { background-color: #191b1f; }
 }
+
+:host(.success) > .ngx-notification-progress { background-color: #295f2d; }
+
+:host(.error) > .ngx-notification-progress { background-color: #7e2020; }
+
+:host(.warning) > .ngx-notification-progress { background-color: #ac7a26; }
+
+:host(.info) > .ngx-notification-progress { background-color: #191b1f; }

@@ -39,7 +39,7 @@ export interface Notification {
 
 }
 
-export enum NotificationType {
+export const enum NotificationType {
     Success = 'success',
     Error = 'error',
     Warning = 'warning',

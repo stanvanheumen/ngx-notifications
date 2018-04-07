@@ -1,9 +1,17 @@
-<ngx-notifications-list></ngx-notifications-list>
+<ngx-notifications-list [align]="currentAlignment">
+</ngx-notifications-list>
 
 <select [(ngModel)]="currentLanguage" (ngModelChange)="onLanguageChange($event)" title="Current language">
     <option *ngFor="let language of languages" [value]="language.languages[0]">
         {{ language.name | translate }}
     </option>
+</select>
+
+<select [(ngModel)]="currentAlignment" title="Alignment">
+    <option value="top left">top left</option>
+    <option value="top right">top right</option>
+    <option value="bottom left">bottom left</option>
+    <option value="bottom right">bottom right</option>
 </select>
 
 <button (click)="createSuccess()" type="button">Create <strong>success</strong> notification</button>

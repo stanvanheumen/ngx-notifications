@@ -1,8 +1,8 @@
 import {
-    ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, NgZone, OnDestroy, OnInit,
+    ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, HostBinding, Input, NgZone, OnDestroy, OnInit,
     Output
 } from '@angular/core';
-import {Notification} from '../notifications.interface';
+import {Notification, NotificationType} from '../notifications.interface';
 
 @Component({
     selector: 'ngx-notifications-item',
@@ -15,6 +15,7 @@ export class NgxNotificationsItemComponent implements OnInit, OnDestroy {
 
     // Input.
     @Input() notification: Notification;
+    @Input() iconClass = 'material-icons';
 
     // Output.
     @Output() onDestroy = new EventEmitter<Notification>();
@@ -30,24 +31,16 @@ export class NgxNotificationsItemComponent implements OnInit, OnDestroy {
     private startTime: number;
     private difference: number;
 
+    @HostBinding('class') get getClass() {
+        return <NotificationType>this.notification.type;
+    }
+
     constructor(private zone: NgZone,
                 private changeDetection: ChangeDetectorRef) {
     }
 
     get progressWidth() {
         return Math.min(this.progress, 100) + '%';
-    }
-
-    get notificationClasses() {
-        return {
-            ['ngx-notification--' + this.notification.type]: true
-        };
-    }
-
-    get progressBarClasses() {
-        return {
-            ['ngx-notification-progress--' + this.notification.type]: true
-        };
     }
 
     ngOnInit() {
@@ -63,7 +56,7 @@ export class NgxNotificationsItemComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         // Check if clearTimeout exists.
-        if (this.notification.timeout <= 0 || setTimeout === undefined) {
+        if (this.notification.timeout <= 0 || clearTimeout === undefined) {
             return;
         }
 
