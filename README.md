@@ -25,7 +25,7 @@ To use ngx-notifications in your project install it via `npm` or `yarn`:
 
 $ npm install @stanvanheumen/ngx-notifications --save
 
-# or
+# Or
 
 $ yarn add @stanvanheumen/ngx-notifications
 ```
